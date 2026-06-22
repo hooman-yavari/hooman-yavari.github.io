@@ -520,9 +520,9 @@
 
                         <!-- Contact Form -->
                         <div class="p-10 md:p-16 bg-white border-l border-slate-100">
-                            <form action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
+                           <form id="contact-form" enctype="multipart/form-data" class="space-y-6">
                                 <!-- Your Access Key -->
-                                <input type="hidden" name="redierct" value="https://hooman-yavari.github.io/thank-you.html">
+                          
                                 
                                 <div>
                                     <label for="name" class="block text-sm font-medium text-slate-700">Full Name</label>
@@ -669,5 +669,26 @@
             });
         });
     </script>
+    <script src="https://forminit.com/sdk/v1/forminit.js"></script>
+
+<script>
+  const forminit = new Forminit();
+  const FORM_ID = "7x0l0pgv5g5";
+
+  document.getElementById("contact-form").addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(e.target);
+    const { data, error } = await forminit.submit(FORM_ID, formData);
+
+    if (error) {
+      alert(error.message);
+      return;
+    }
+
+    alert("Message sent successfully!");
+    e.target.reset();
+  });
+</script>
 </body>
 </html>
