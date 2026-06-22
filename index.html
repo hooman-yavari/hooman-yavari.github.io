@@ -526,27 +526,16 @@
                                 
                                 <div>
                                     <label for="name" class="block text-sm font-medium text-slate-700">Full Name</label>
-                                    <input type="text" name="name" id="name" required class="mt-1 block w-full border-slate-300 rounded-md shadow-sm focus:ring-purple focus:border-purple sm:text-sm px-4 py-3 border bg-slate-50" placeholder="John Doe">
+                                    <input type="text" name="fi-sender-fullName" id="name" required class="mt-1 block w-full border-slate-300 rounded-md shadow-sm focus:ring-purple focus:border-purple sm:text-sm px-4 py-3 border bg-slate-50" placeholder="John Doe">
                                 </div>
                                 <div>
                                     <label for="email" class="block text-sm font-medium text-slate-700">Email Address</label>
-                                    <input type="email" name="email" id="email" required class="mt-1 block w-full border-slate-300 rounded-md shadow-sm focus:ring-purple focus:border-purple sm:text-sm px-4 py-3 border bg-slate-50" placeholder="john@example.com">
+                                    <input type="email" name="fi-sender-email" id="email" required class="mt-1 block w-full border-slate-300 rounded-md shadow-sm focus:ring-purple focus:border-purple sm:text-sm px-4 py-3 border bg-slate-50" placeholder="john@example.com">
                                 </div>
                                 
-                                <div class="bg-slate-50 p-4 rounded-lg border border-slate-200">
-                                    <label for="ai-prompt" class="block text-sm font-medium text-slate-700 mb-2">AI Message Drafter (Optional)</label>
-                                    <div class="flex flex-col sm:flex-row gap-2">
-                                        <input type="text" id="ai-prompt" class="flex-grow border-slate-300 rounded-md shadow-sm focus:ring-purple focus:border-purple sm:text-sm px-4 py-2 border" placeholder="e.g., 'Inquire about a guest lecture'">
-                                        <button type="button" id="draft-btn" class="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-purple bg-purple-light hover:bg-purple-dark hover:text-white transition-colors">
-                                            <span id="draft-btn-text">Draft Draft</span>
-                                        </button>
-                                    </div>
-                                    <p class="text-xs text-slate-500 mt-2">Describe what you want to write, and I'll generate a professional draft for you.</p>
-                                </div>
-
                                 <div>
                                     <label for="message" class="block text-sm font-medium text-slate-700">Message</label>
-                                    <textarea id="message" name="message" rows="4" required class="mt-1 block w-full border-slate-300 rounded-md shadow-sm focus:ring-purple focus:border-purple sm:text-sm px-4 py-3 border bg-slate-50" placeholder="How can I help you?"></textarea>
+                                    <textarea id="message" name="fi-text-message" rows="4" required class="mt-1 block w-full border-slate-300 rounded-md shadow-sm focus:ring-purple focus:border-purple sm:text-sm px-4 py-3 border bg-slate-50" placeholder="How can I help you?"></textarea>
                                 </div>
                                 
                                 <!-- Success/Error Redirect -->
