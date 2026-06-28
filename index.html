@@ -146,9 +146,21 @@
     </header>
 
     <main class="flex-grow">
-        <section id="home" class="relative bg-slate-50 overflow-hidden">
-            <div class="max-w-7xl mx-auto">
-                <div class="relative z-10 pb-16 bg-slate-50 sm:pb-24 md:pb-32 w-full pt-16 sm:pt-24 lg:pt-32 px-4 sm:px-6 lg:px-8">
+        <section id="home" class="relative overflow-hidden">
+
+    <!-- Hero Image -->
+    <img
+        src="./images/hero.jpg"
+        alt="Hooman Yavari"
+        class="absolute inset-0 w-full h-full object-cover object-top"
+        style="object-position: center 30%;"
+    >
+
+    <!-- White overlay -->
+    <div class="absolute inset-0 bg-white/70"></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto">
+                <div class="relative z-10 pb-16 sm:pb-24 md:pb-32 w-full pt-16 sm:pt-24 lg:pt-32 px-4 sm:px-6 lg:px-8">
                     <div class="text-center max-w-4xl mx-auto">
                         <div class="inline-flex items-center px-3 py-1 rounded-full bg-green-light text-green-dark text-sm font-semibold tracking-wide mb-6">
                             <span class="w-2 h-2 rounded-full bg-green mr-2"></span>
@@ -181,12 +193,11 @@
                     <div class="inline-flex items-center justify-center w-16 h-16 bg-green-light rounded-full text-green-dark mb-6">
                         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                     </div>
-                    <h2 class="text-sm text-purple font-bold tracking-widest uppercase mb-3">About The Researcher</h2>
-                    <h3 class="text-3xl md:text-4xl font-serif font-bold text-slate-900">Bridging the gap between empirical research and the pitch.</h3>
+                    <h2 class="text-sm text-purple font-bold tracking-widest uppercase mb-3">About Me</h2>
                 </div>
                 
                 <div class="prose prose-lg text-slate-600 mx-auto">
-                    <p class="mb-4 text-center">
+                    
                     <div class="lg:col-span-5 mb-12 lg:mb-0">
                         <div class="relative">
                             <!-- Decorative background element -->
@@ -210,15 +221,15 @@
                     </div>
                     
                     <div class="lg:col-span-7">
-                        <h2 class="text-sm text-purple font-bold tracking-widest uppercase mb-3">About The Researcher</h2>
-                        <h3 class="text-3xl md:text-4xl font-serif font-bold text-slate-900 mb-6">Bridging the gap between empirical research and the pitch.</h3>
+                        <h2 class="text-sm text-purple font-bold tracking-widest uppercase mb-3"></h2>
+                        <h3 class="text-3xl md:text-4xl font-serif font-bold text-slate-900 mb-6">The Science of Human Performance.</h3>
                         
                         <div class="prose prose-lg text-slate-600">
                             <p class="mb-4">
-                                Hello, I'm <strong>Hooman Yavari</strong>. I am a Sports Science student, a certified football coach, and an athlete with over a decade of playing experience. My passion lies at the intersection of rigorous scientific research and practical athlete development.
+                                Hi, I'm <strong>Hooman Yavari</strong>, a Sports Science student, certified football coach, and a football player. I've always been passionate about sport and curious about what helps athletes perform better.
                             </p>
                             <p class="mb-6">
-                                Having spent <strong>10+ years as a football athlete</strong>, I understand the physical and psychological demands of the modern game. This first-hand experience drives my academic pursuit in Sports Science, where I focus on evidence-based methodologies to optimize human performance and mitigate injury risks.
+                                <strong>My experience on the pitch</strong>, together with my studies in Sports Science and coaching education, has led me to explore topics such as athletic performance, strength and conditioning, injury prevention, and football performance analysis. Through this website, I share what I learn, discuss research, and write about ideas that can help coaches, athletes, and anyone interested in sports science.
                             </p>
                             
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8 border-t border-slate-100 pt-8">
@@ -236,6 +247,62 @@
                                     </h4>
                                     <p class="text-sm mt-2">Certified through GMacademy (Spain), I implement research-driven training structures for holistic athlete development.</p>
                                 </div>
+                            </div>                
+                                  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1 mt-10">
+
+                                        <!-- Coaching Certificate -->
+                                         <div class="bg-white rounded-2xl shadow-md overflow-hidden border border-slate-200 hover:shadow-xl transition duration-300">
+                                             <img src="./images/certificate.jpeg"
+                                             alt="Football Coaching Certificate"
+                                              class="w-full h-80 object-cover">
+
+                                            <div class="p-4 text-center">
+                                              <h4 class="font-semibold text-slate-900">
+                                               Football Coaching Certificate
+                                             </h4>
+
+                                            <p class="text-sm text-slate-500 mt-1">
+                                             GMacademy • Spain
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                          <!-- Football Team -->
+                                        <div class="bg-white rounded-2xl shadow-md overflow-hidden border border-slate-200 hover:shadow-xl transition duration-300">
+                                                <img src="./images/teampic.jpeg"
+                                                 alt="Football Team"
+                                                 class="w-full h-72 object-cover">
+
+                                            <div class="p-4 text-center">
+                                                 <h4 class="font-semibold text-slate-900">
+                                                  Football Experience
+                                                </h4>
+
+                                                 <p class="text-sm text-slate-500 mt-1">
+                                                 10+ Years of Playing Football
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <!-- Coach Photo -->
+                                            <div class="bg-white rounded-2xl shadow-md overflow-hidden border border-slate-200 hover:shadow-xl transition duration-300">
+                                                <img
+                                                 src="./images/coach.jpeg"
+                                                 alt="Hooman Yavari"
+                                                 class="w-full h-50 object-cover">
+
+                                                     <div class="p-4 text-center">
+                                                     <h4 class="font-semibold text-slate-900">
+                                                    On the Pitch
+                                                     </h4>
+
+                                                    <p class="text-sm text-slate-500 mt-1">
+                                                     Football Coach & Sports Science Student
+                                                    </p>
+                                </div>
+                            </div>
+
+                         </div>
                             </div>
                         </div>
                     </div>
@@ -244,7 +311,7 @@
         </section>
 
         <section id="featured-article" class="py-20 bg-slate-50 border-y border-slate-200">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 
                 <div class="text-center mb-12">
                     <span class="bg-purple-light/50 text-purple-dark text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Featured Research</span>
@@ -579,56 +646,6 @@
 
     <!-- Scripts -->
     <script>
-        async function draftMessageWithAI() {
-            const promptInput = document.getElementById('ai-prompt');
-            const messageTextarea = document.getElementById('message');
-            const draftBtn = document.getElementById('draft-btn');
-            const draftBtnText = document.getElementById('draft-btn-text');
-            const userIntent = promptInput.value.trim();
-
-            if (!userIntent) {
-                alert('Please enter a brief description of what you would like to write.');
-                return;
-            }
-
-            // UI feedback
-            draftBtn.disabled = true;
-            draftBtnText.textContent = 'Drafting...';
-
-            try {
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=`;
-                const response = await fetch(apiUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        contents: [{
-                            parts: [{ text: `Act as a helpful professional assistant. Write a polite, professional, and concise email message to Hooman Yavari, a sports scientist. The user wants to: "${userIntent}". The message should be ready to be sent from a contact form.` }]
-                        }],
-                        systemInstruction: {
-                            parts: [{ text: "You are an assistant for a sports science professional's website. Keep all generated drafts professional, polite, and research-oriented." }]
-                        }
-                    })
-                });
-
-                const result = await response.json();
-                const draft = result.candidates?.[0]?.content?.parts?.[0]?.text;
-                
-                if (draft) {
-                    messageTextarea.value = draft;
-                } else {
-                    throw new Error('Could not generate a draft.');
-                }
-            } catch (error) {
-                console.error('Drafting error:', error);
-                alert('Sorry, there was an error generating your draft. Please try again.');
-            } finally {
-                draftBtn.disabled = false;
-                draftBtnText.textContent = 'Draft Message';
-            }
-        }
-
-        document.getElementById('draft-btn').addEventListener('click', draftMessageWithAI);
-
         // Simple script to toggle the mobile menu
         document.addEventListener('DOMContentLoaded', () => {
             const btn = document.getElementById('mobile-menu-btn');
