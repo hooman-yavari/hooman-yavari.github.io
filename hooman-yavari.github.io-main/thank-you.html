@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You | Hooman Yavari</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            /* White + Light Purple + Light Green */
+            background: linear-gradient(
+                135deg,
+                #ffffff 0%,
+                #f3e8ff 50%,
+                #dcfce7 100%
+            );
+
+            color: #334155;
+            padding: 20px;
+        }
+
+        .container {
+            background: rgba(255,255,255,0.9);
+            backdrop-filter: blur(10px);
+
+            padding: 55px 45px;
+            border-radius: 24px;
+
+            max-width: 650px;
+            width: 100%;
+
+            text-align: center;
+
+            box-shadow:
+                0 15px 40px rgba(139,92,246,0.12),
+                0 5px 15px rgba(16,185,129,0.08);
+
+            border: 1px solid rgba(255,255,255,0.8);
+        }
+
+        .checkmark {
+            width: 90px;
+            height: 90px;
+            margin: 0 auto 25px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+            background: #dcfce7;
+            color: #10b981;
+
+            font-size: 42px;
+            font-weight: bold;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: #1e293b;
+        }
+
+        p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #64748b;
+            margin-bottom: 12px;
+        }
+
+        .home-btn {
+            display: inline-block;
+            margin-top: 25px;
+
+            padding: 14px 30px;
+            border-radius: 12px;
+
+            background: #8b5cf6;
+            color: white;
+            text-decoration: none;
+
+            font-weight: 600;
+
+            transition: all 0.3s ease;
+        }
+
+        .home-btn:hover {
+            background: #6d28d9;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(139,92,246,0.25);
+        }
+
+        @media (max-width: 640px) {
+            .container {
+                padding: 40px 25px;
+            }
+
+            h1 {
+                font-size: 1.7rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="checkmark">✓</div>
+
+        <h1>Message Sent Successfully</h1>
+
+        <p>
+            Thank you for reaching out.
+        </p>
+
+        <p>
+            Your message has been received, and I will respond as soon as possible.
+        </p>
+
+        <p>
+            I appreciate your interest in my work and look forward to connecting with you.
+        </p>
+
+        <a href="https://hooman-yavari.github.io/" class="home-btn">
+            Back to Homepage
+        </a>
+
+    </div>
+
+</body>
+</html>
