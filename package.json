@@ -1,0 +1,18 @@
+{
+  "name": "hooman-yavari.github.io-main",
+  "version": "1.0.0",
+  "description": "Sports Science Research Website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "sports-science",
+    "football",
+    "research",
+    "athlete-development"
+  ],
+  "author": "Hooman Yavari",
+  "license": "ISC",
+  "type": "commonjs"
+}

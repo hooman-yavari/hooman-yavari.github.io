@@ -22,16 +22,15 @@
                         serif: ['Lora', 'serif'],
                     },
                     colors: {
-                        // Custom Palette based on requirements
                         primary: '#ffffff',
                         purple: {
                             light: '#e0d4fc',
-                            DEFAULT: '#8b5cf6', // Light/Medium Purple
+                            DEFAULT: '#8b5cf6',
                             dark: '#6d28d9',
                         },
                         green: {
                             light: '#d1fae5',
-                            DEFAULT: '#10b981', // Light Green accent
+                            DEFAULT: '#10b981',
                             dark: '#059669',
                         },
                         slate: {
@@ -45,40 +44,51 @@
     </script>
 
     <style>
+        /* ========== GLOBAL STYLES ========== */
         body {
             font-family: 'Inter', sans-serif;
             background-color: #ffffff;
             color: #334155;
         }
+
         h1, h2, h3, h4, h5, h6, .font-serif {
             font-family: 'Lora', serif;
         }
+
+        /* ========== UTILITY CLASSES ========== */
         .text-gradient {
             background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-image: linear-gradient(to right, #8b5cf6, #10b981);
         }
-        /* Custom subtle scrollbar */
+
+        /* ========== SCROLLBAR STYLING ========== */
         ::-webkit-scrollbar {
             width: 8px;
         }
+
         ::-webkit-scrollbar-track {
             background: #f1f5f9;
         }
+
         ::-webkit-scrollbar-thumb {
             background: #cbd5e1;
             border-radius: 4px;
         }
+
         ::-webkit-scrollbar-thumb:hover {
             background: #94a3b8;
         }
+
+        /* ========== ARTICLE BODY STYLES ========== */
         .article-body p {
             margin-bottom: 1.5rem;
             line-height: 1.8;
             font-size: 1.125rem;
             color: #475569;
         }
+
         .article-body h3 {
             margin-top: 2.5rem;
             margin-bottom: 1rem;
@@ -86,12 +96,14 @@
             font-weight: 600;
             color: #1e293b;
         }
+
         .article-body ul {
             list-style-type: disc;
             padding-left: 1.5rem;
             margin-bottom: 1.5rem;
             color: #475569;
         }
+
         .article-body li {
             margin-bottom: 0.5rem;
         }
@@ -105,11 +117,12 @@
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
                     <a href="#" class="flex items-center gap-3 group">
-                        <!-- Minimalist HY Logo -->
                         <div class="w-10 h-10 flex items-center justify-center bg-purple text-white font-serif font-bold text-xl rounded shadow-md group-hover:bg-purple-dark transition-colors">
                             HY
                         </div>
-                        <span class="text-xl font-serif font-semibold text-slate-900 tracking-tight">Hooman's <span class="text-purple">Research</span></span>
+                        <span class="text-xl font-serif font-semibold text-slate-900 tracking-tight">
+                            Hooman's <span class="text-purple">Research</span>
+                        </span>
                     </a>
                 </div>
                 
@@ -117,12 +130,12 @@
                 <nav class="hidden md:flex space-x-8">
                     <a href="#home" class="text-slate-600 hover:text-purple px-3 py-2 text-sm font-medium transition-colors">Home</a>
                     <a href="#about" class="text-slate-600 hover:text-purple px-3 py-2 text-sm font-medium transition-colors">About Me</a>
-                    <a href="#featured-article" class="text-slate-600 hover:text-purple px-3 py-2 text-sm font-medium transition-colors">Featured Research</a>
+                    <a href="./articles/index.html" class="text-slate-600 hover:text-purple px-3 py-2 text-sm font-medium transition-colors">Articles</a>
                     <a href="#areas" class="text-slate-600 hover:text-purple px-3 py-2 text-sm font-medium transition-colors">Expertise</a>
                     <a href="#contact" class="text-slate-600 hover:text-purple px-3 py-2 text-sm font-medium transition-colors">Contact</a>
                 </nav>
 
-                <!-- Mobile menu button -->
+                <!-- Mobile Menu Button -->
                 <div class="flex md:hidden items-center">
                     <button id="mobile-menu-btn" class="text-slate-600 hover:text-slate-900 focus:outline-none p-2">
                         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -138,7 +151,7 @@
             <div class="px-4 pt-2 pb-6 space-y-1">
                 <a href="#home" class="block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:text-purple hover:bg-slate-50">Home</a>
                 <a href="#about" class="block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:text-purple hover:bg-slate-50">About Me</a>
-                <a href="#featured-article" class="block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:text-purple hover:bg-slate-50">Featured Research</a>
+                <a href="./articles/index.html" class="block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:text-purple hover:bg-slate-50">Articles</a>
                 <a href="#areas" class="block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:text-purple hover:bg-slate-50">Expertise</a>
                 <a href="#contact" class="block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:text-purple hover:bg-slate-50">Contact</a>
             </div>
@@ -147,35 +160,37 @@
 
     <main class="flex-grow">
         <section id="home" class="relative overflow-hidden">
+            <!-- Hero Image -->
+            <img
+                src="./images/hero.jpg"
+                alt="Hooman Yavari"
+                class="absolute inset-0 w-full h-full object-cover object-top"
+                style="object-position: center 30%;">
 
-    <!-- Hero Image -->
-    <img
-        src="./images/hero.jpg"
-        alt="Hooman Yavari"
-        class="absolute inset-0 w-full h-full object-cover object-top"
-        style="object-position: center 30%;"
-    >
+            <!-- White Overlay -->
+            <div class="absolute inset-0 bg-white/70"></div>
 
-    <!-- White overlay -->
-    <div class="absolute inset-0 bg-white/70"></div>
-
-    <div class="relative z-10 max-w-7xl mx-auto">
+            <!-- Hero Content -->
+            <div class="relative z-10 max-w-7xl mx-auto">
                 <div class="relative z-10 pb-16 sm:pb-24 md:pb-32 w-full pt-16 sm:pt-24 lg:pt-32 px-4 sm:px-6 lg:px-8">
                     <div class="text-center max-w-4xl mx-auto">
                         <div class="inline-flex items-center px-3 py-1 rounded-full bg-green-light text-green-dark text-sm font-semibold tracking-wide mb-6">
                             <span class="w-2 h-2 rounded-full bg-green mr-2"></span>
                             Sports Science & Athlete Development
                         </div>
+
                         <h1 class="text-4xl tracking-tight font-extrabold text-slate-900 sm:text-5xl md:text-6xl font-serif leading-tight">
                             <span class="block">Sports Science,</span>
                             <span class="block">Performance, and</span>
                             <span class="block text-purple">Football Research</span>
                         </h1>
+
                         <p class="mt-4 text-base text-slate-600 sm:mt-5 sm:text-lg sm:max-w-2xl mx-auto md:mt-5 md:text-xl font-light">
                             Evidence-based insights on athlete development, football performance, coaching methodology, and applied sports science by Hooman Yavari.
                         </p>
+
                         <div class="mt-8 sm:mt-10 flex flex-col sm:flex-row justify-center gap-4">
-                            <a href="#featured-article" class="w-full sm:w-auto flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-purple hover:bg-purple-dark md:py-4 md:text-lg transition-all shadow-md hover:shadow-lg">
+                            <a href="./articles/index.html" class="w-full sm:w-auto flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-purple hover:bg-purple-dark md:py-4 md:text-lg transition-all shadow-md hover:shadow-lg">
                                 Read Articles
                             </a>
                             <a href="#about" class="mt-3 sm:mt-0 w-full sm:w-auto flex items-center justify-center px-8 py-3 border border-slate-200 text-base font-medium rounded-md text-slate-700 bg-white hover:bg-slate-50 hover:border-slate-300 md:py-4 md:text-lg transition-all shadow-sm">
@@ -248,61 +263,55 @@
                                     <p class="text-sm mt-2">Certified through GMacademy (Spain), I implement research-driven training structures for holistic athlete development.</p>
                                 </div>
                             </div>                
-                                  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1 mt-10">
-
-                                        <!-- Coaching Certificate -->
-                                         <div class="bg-white rounded-2xl shadow-md overflow-hidden border border-slate-200 hover:shadow-xl transition duration-300">
-                                             <img src="./images/certificate.jpeg"
-                                             alt="Football Coaching Certificate"
-                                              class="w-full h-80 object-cover">
-
-                                            <div class="p-4 text-center">
-                                              <h4 class="font-semibold text-slate-900">
-                                               Football Coaching Certificate
-                                             </h4>
-
-                                            <p class="text-sm text-slate-500 mt-1">
-                                             GMacademy • Spain
-                                            </p>
-                                        </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1 mt-10">
+                                <!-- Coaching Certificate -->
+                                <div class="bg-white rounded-2xl shadow-md overflow-hidden border border-slate-200 hover:shadow-xl transition duration-300">
+                                    <img 
+                                        src="./images/certificate.jpeg"
+                                        alt="Football Coaching Certificate"
+                                        class="w-full h-80 object-cover">
+                                    <div class="p-4 text-center">
+                                        <h4 class="font-semibold text-slate-900">
+                                            Football Coaching Certificate
+                                        </h4>
+                                        <p class="text-sm text-slate-500 mt-1">
+                                            GMacademy • Spain
+                                        </p>
                                     </div>
+                                </div>
 
-                                          <!-- Football Team -->
-                                        <div class="bg-white rounded-2xl shadow-md overflow-hidden border border-slate-200 hover:shadow-xl transition duration-300">
-                                                <img src="./images/teampic.jpeg"
-                                                 alt="Football Team"
-                                                 class="w-full h-72 object-cover">
+                                <!-- Football Team -->
+                                <div class="bg-white rounded-2xl shadow-md overflow-hidden border border-slate-200 hover:shadow-xl transition duration-300">
+                                    <img 
+                                        src="./images/teampic.jpeg"
+                                        alt="Football Team"
+                                        class="w-full h-72 object-cover">
+                                    <div class="p-4 text-center">
+                                        <h4 class="font-semibold text-slate-900">
+                                            Football Experience
+                                        </h4>
+                                        <p class="text-sm text-slate-500 mt-1">
+                                            10+ Years of Playing Football
+                                        </p>
+                                    </div>
+                                </div>
 
-                                            <div class="p-4 text-center">
-                                                 <h4 class="font-semibold text-slate-900">
-                                                  Football Experience
-                                                </h4>
-
-                                                 <p class="text-sm text-slate-500 mt-1">
-                                                 10+ Years of Playing Football
-                                                </p>
-                                            </div>
-                                        </div>
-
-                                        <!-- Coach Photo -->
-                                            <div class="bg-white rounded-2xl shadow-md overflow-hidden border border-slate-200 hover:shadow-xl transition duration-300">
-                                                <img
-                                                 src="./images/coach.jpeg"
-                                                 alt="Hooman Yavari"
-                                                 class="w-full h-50 object-cover">
-
-                                                     <div class="p-4 text-center">
-                                                     <h4 class="font-semibold text-slate-900">
-                                                    On the Pitch
-                                                     </h4>
-
-                                                    <p class="text-sm text-slate-500 mt-1">
-                                                     Football Coach & Sports Science Student
-                                                    </p>
+                                <!-- Coach Photo -->
+                                <div class="bg-white rounded-2xl shadow-md overflow-hidden border border-slate-200 hover:shadow-xl transition duration-300">
+                                    <img
+                                        src="./images/coach.jpeg"
+                                        alt="Hooman Yavari"
+                                        class="w-full h-50 object-cover">
+                                    <div class="p-4 text-center">
+                                        <h4 class="font-semibold text-slate-900">
+                                            On the Pitch
+                                        </h4>
+                                        <p class="text-sm text-slate-500 mt-1">
+                                            Football Coach & Sports Science Student
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
-
-                         </div>
                             </div>
                         </div>
                     </div>
@@ -310,119 +319,14 @@
             </div>
         </section>
 
-        <section id="featured-article" class="py-20 bg-slate-50 border-y border-slate-200">
-            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                
-                <div class="text-center mb-12">
-                    <span class="bg-purple-light/50 text-purple-dark text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Featured Research</span>
-                </div>
-
-                <article class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
-                    <!-- Article Content -->
-                    <div class="p-8 sm:p-12">
-                        <header class="mb-10 text-center border-b border-slate-100 pb-10">
-                            <div class="flex items-center justify-center gap-4 text-sm text-slate-500 mb-4">
-                                <span>Published: <time datetime="2026-06-21">June 21, 2026</time></span>
-                                <span>&bull;</span>
-                                <span>Category: Athlete Monitoring</span>
-                                <span>&bull;</span>
-                                <span>4 min read</span>
-                            </div>
-                            <h2 class="text-3xl sm:text-4xl font-serif font-bold text-slate-900 leading-tight mb-8">
-                                The Importance of Monitoring Training Load in Football
-                            </h2>
-                            <div class="flex items-center justify-center gap-3">
-                                <div class="w-10 h-10 rounded-full bg-purple-light flex items-center justify-center text-purple-dark font-serif font-bold text-sm">
-                                    HY
-                                </div>
-                                <div class="text-left">
-                                    <p class="text-sm font-semibold text-slate-900">Hooman Yavari</p>
-                                    <p class="text-xs text-slate-500">Sports Scientist & Coach</p>
-                                </div>
-                            </div>
-                        </header>
-
-                        <div class="article-body">
-                            <p class="lead text-xl text-slate-700 font-serif mb-8 border-l-4 border-purple pl-4 italic">
-                                Modern football has evolved into a highly demanding physical endeavor. Players are exposed to fixture congestion, high-speed running demands, and immense physiological stress. To navigate this landscape, the intuitive "eye of the coach" is no longer sufficient.
-                            </p>
-
-                            <p>
-                                The margin between peak athletic performance and overtraining is incredibly thin. Pushing athletes hard is necessary for physiological adaptation and fitness development, but excessive stress without adequate recovery leads to fatigue, burnout, and a heightened risk of injury. This is where the systematic monitoring of <strong>training load</strong> becomes a non-negotiable aspect of modern football science.
-                            </p>
-
-                            <h3>Defining Training Load: Internal vs. External</h3>
-                            <p>
-                                To effectively monitor athletes, sports scientists categorize load into two distinct metrics: external load and internal load.
-                            </p>
-                            <ul>
-                                <li><strong>External Load:</strong> This is the physical work performed by the player. It is objective and measurable regardless of the athlete's current fitness level. In professional football, external load is typically quantified using Global Positioning System (GPS) technology and accelerometers. Key metrics include total distance covered, high-speed running distance (>19.8 km/h), sprint distance, number of accelerations, and decelerations.</li>
-                                <li><strong>Internal Load:</strong> This represents the physiological and psychological stress imposed on the athlete as a consequence of the external load. It dictates how the individual's body is coping with the work. Common measures include heart rate (HR), blood lactate concentration, and crucially, the Session Rating of Perceived Exertion (sRPE).</li>
-                            </ul>
-                            <p>
-                                The relationship between these two is critical. If two players perform the exact same external load (e.g., a 10km tactical session), their internal response might be entirely different based on their current fitness, fatigue, stress levels, and nutritional status.
-                            </p>
-
-                            <h3>The Acute:Chronic Workload Ratio (ACWR) and Injury Prevention</h3>
-                            <p>
-                                One of the primary goals of monitoring load is injury mitigation, particularly regarding soft-tissue injuries like hamstring strains and groin issues. Research by Tim Gabbett and colleagues popularized the concept of the Acute:Chronic Workload Ratio (ACWR).
-                            </p>
-                            <p>
-                                The ACWR compares a player's recent training load (the "acute" load, typically the last 7 days) against their historical training load (the "chronic" load, typically the average of the last 28 days). 
-                            </p>
-                            <ul>
-                                <li>When the ratio is around <strong>0.8 to 1.3</strong>, players are generally considered to be in the "sweet spot," where injury risk is minimized, and fitness is optimized.</li>
-                                <li>When the ratio spikes above <strong>1.5</strong> (the "danger zone"), the risk of injury rises exponentially. This usually happens when a player is rushed back from injury or when a coach suddenly increases the intensity or volume of training sessions without gradual progression.</li>
-                            </ul>
-                            <p>
-                                Monitoring allows practitioners to identify these dangerous spikes before they manifest as injuries, allowing for proactive session modification.
-                            </p>
-
-                            <h3>Performance Optimization & Tapering</h3>
-                            <p>
-                                Beyond injury prevention, load monitoring is vital for peaking on match day. The fitness-fatigue model suggests that an athlete's preparedness is the difference between their underlying fitness and their accumulated fatigue.
-                            </p>
-                            <p>
-                                By quantifying load, a sports scientist can structure the microcycle (the weekly training plan) to ensure that tactical and high-intensity days occur at the right time (e.g., Match Day -3 or -4), followed by a strategic "tapering" phase (reducing volume while maintaining intensity) so that players are biologically fresh and supercompensated for the weekend fixture.
-                            </p>
-
-                            <h3>Practical Applications for Coaches at All Levels</h3>
-                            <p>
-                                While elite academies utilize expensive GPS and heart rate telemetries, load monitoring is not exclusive to top-tier clubs. Grassroots and sub-elite coaches can implement effective monitoring systems using zero-budget tools:
-                            </p>
-                            <ol class="list-decimal pl-5 mb-6 text-slate-600 space-y-2">
-                                <li><strong>Session RPE (sRPE):</strong> 15-30 minutes after a session, ask players to rate the difficulty of the training on a scale of 1-10 (Borg CR10 scale). Multiply this number by the duration of the session in minutes to get an arbitrary unit (AU) of load. E.g., a 90-minute session rated an 8/10 equals 720 AU. Tracking this daily creates a highly reliable internal load profile.</li>
-                                <li><strong>Wellness Questionnaires:</strong> Implement a simple morning survey asking players to rate their sleep quality, muscle soreness, fatigue, and stress levels on a 1-5 scale. A sudden drop in wellness scores is a red flag indicating a player may need their training modified that day.</li>
-                                <li><strong>Structured Periodization:</strong> Plan sessions with a clear objective (e.g., extensive endurance, intensive small-sided games, speed) and stick to the planned duration and dimensions to control the external stimulus.</li>
-                            </ol>
-
-                            <h3>Conclusion</h3>
-                            <p>
-                                Training load monitoring is not about wrapping players in cotton wool; it is about establishing a robust framework that allows athletes to train harder, smarter, and more consistently. Whether utilizing micro-technology or simple pen-and-paper sRPE logs, understanding the dose-response relationship of football training is a defining characteristic of successful, modern athlete development.
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <div class="bg-slate-50 px-8 py-6 border-t border-slate-100 flex justify-between items-center">
-                        <span class="text-sm font-medium text-slate-500">Share this article:</span>
-                        <div class="flex gap-4">
-                            <button class="text-slate-400 hover:text-purple transition-colors"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg></button>
-                            <button class="text-slate-400 hover:text-purple transition-colors"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></button>
-                        </div>
-                    </div>
-                </article>
-
-            </div>
-        </section>
-
-        <section class="py-20 bg-white">
+        <section class="py-20 bg-slate-50 border-y border-slate-200">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex justify-between items-end mb-10 border-b border-slate-100 pb-4">
                     <div>
                         <h2 class="text-3xl font-serif font-bold text-slate-900">Research & Articles Archive</h2>
                         <p class="mt-2 text-slate-500">More insights on sports science and football performance.</p>
                     </div>
-                    <a href="#" class="hidden sm:inline-flex text-purple font-medium hover:text-purple-dark items-center gap-1">
+                    <a href="./articles/index.html" class="hidden sm:inline-flex text-purple font-medium hover:text-purple-dark items-center gap-1">
                         View All Articles <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
                     </a>
                 </div>
@@ -470,7 +374,7 @@
 
                 </div>
                 <div class="mt-8 text-center sm:hidden">
-                    <a href="#" class="inline-flex justify-center w-full px-4 py-3 border border-slate-200 shadow-sm text-sm font-medium rounded-md text-slate-700 bg-white hover:bg-slate-50">
+                    <a href="./articles/index.html" class="inline-flex justify-center w-full px-4 py-3 border border-slate-200 shadow-sm text-sm font-medium rounded-md text-slate-700 bg-white hover:bg-slate-50">
                         View All Articles
                     </a>
                 </div>
@@ -548,7 +452,7 @@
         </section>
 
         <section id="contact" class="py-24 bg-white border-t border-slate-100 relative overflow-hidden">
-            <!-- Decorative circle -->
+            <!-- Decorative Circle -->
             <div class="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 rounded-full bg-purple-light/20 blur-3xl z-0"></div>
             
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -563,6 +467,7 @@
                                 </p>
                                 
                                 <div class="space-y-6">
+                                    <!-- Email Contact -->
                                     <div class="flex items-center gap-4">
                                         <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-purple-light">
                                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
@@ -573,6 +478,7 @@
                                         </div>
                                     </div>
                                     
+                                    <!-- LinkedIn Contact -->
                                     <div class="flex items-center gap-4">
                                         <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-blue-400">
                                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
@@ -588,29 +494,46 @@
 
                         <!-- Contact Form -->
                         <div class="p-10 md:p-16 bg-white border-l border-slate-100">
-                           <form id="contact-form" enctype="multipart/form-data" class="space-y-6">
-                                <!-- Your Access Key -->
-                          
-                                
+                            <form id="contact-form" enctype="multipart/form-data" class="space-y-6">
                                 <div>
                                     <label for="name" class="block text-sm font-medium text-slate-700">Full Name</label>
-                                    <input type="text" name="fi-sender-fullName" id="name" required class="mt-1 block w-full border-slate-300 rounded-md shadow-sm focus:ring-purple focus:border-purple sm:text-sm px-4 py-3 border bg-slate-50" placeholder="John Doe">
+                                    <input 
+                                        type="text" 
+                                        name="fi-sender-fullName" 
+                                        id="name" 
+                                        required 
+                                        class="mt-1 block w-full border-slate-300 rounded-md shadow-sm focus:ring-purple focus:border-purple sm:text-sm px-4 py-3 border bg-slate-50" 
+                                        placeholder="John Doe">
                                 </div>
+
                                 <div>
                                     <label for="email" class="block text-sm font-medium text-slate-700">Email Address</label>
-                                    <input type="email" name="fi-sender-email" id="email" required class="mt-1 block w-full border-slate-300 rounded-md shadow-sm focus:ring-purple focus:border-purple sm:text-sm px-4 py-3 border bg-slate-50" placeholder="john@example.com">
+                                    <input 
+                                        type="email" 
+                                        name="fi-sender-email" 
+                                        id="email" 
+                                        required 
+                                        class="mt-1 block w-full border-slate-300 rounded-md shadow-sm focus:ring-purple focus:border-purple sm:text-sm px-4 py-3 border bg-slate-50" 
+                                        placeholder="john@example.com">
                                 </div>
                                 
                                 <div>
                                     <label for="message" class="block text-sm font-medium text-slate-700">Message</label>
-                                    <textarea id="message" name="fi-text-message" rows="4" required class="mt-1 block w-full border-slate-300 rounded-md shadow-sm focus:ring-purple focus:border-purple sm:text-sm px-4 py-3 border bg-slate-50" placeholder="How can I help you?"></textarea>
+                                    <textarea 
+                                        id="message" 
+                                        name="fi-text-message" 
+                                        rows="4" 
+                                        required 
+                                        class="mt-1 block w-full border-slate-300 rounded-md shadow-sm focus:ring-purple focus:border-purple sm:text-sm px-4 py-3 border bg-slate-50" 
+                                        placeholder="How can I help you?"></textarea>
                                 </div>
                                 
-                                <!-- Success/Error Redirect -->
                                 <input type="hidden" name="redirect" value="https://hooman-yavari.github.io/thank-you.html">
                                 
                                 <div>
-                                    <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-purple hover:bg-purple-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple transition-colors">
+                                    <button 
+                                        type="submit" 
+                                        class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-purple hover:bg-purple-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple transition-colors">
                                         Send Message
                                     </button>
                                 </div>
@@ -624,20 +547,25 @@
 
     <footer class="bg-slate-50 border-t border-slate-200 py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <!-- Logo and Brand -->
             <div class="flex items-center gap-3">
                 <div class="w-8 h-8 flex items-center justify-center bg-purple text-white font-serif font-bold text-sm rounded">
                     HY
                 </div>
-                <span class="text-lg font-serif font-semibold text-slate-900 tracking-tight">Hooman's <span class="text-purple">Research</span></span>
+                <span class="text-lg font-serif font-semibold text-slate-900 tracking-tight">
+                    Hooman's <span class="text-purple">Research</span>
+                </span>
             </div>
             
+            <!-- Navigation Links -->
             <div class="flex space-x-6 text-sm text-slate-500 font-medium">
                 <a href="#home" class="hover:text-purple transition-colors">Home</a>
                 <a href="#about" class="hover:text-purple transition-colors">About</a>
-                <a href="#featured-article" class="hover:text-purple transition-colors">Research</a>
+                <a href="./articles/index.html" class="hover:text-purple transition-colors">Articles</a>
                 <a href="#contact" class="hover:text-purple transition-colors">Contact</a>
             </div>
 
+            <!-- Copyright -->
             <div class="text-slate-400 text-sm">
                 &copy; 2026 Hooman Yavari. All rights reserved.
             </div>
@@ -646,11 +574,12 @@
 
     <!-- Scripts -->
     <script>
-        // Simple script to toggle the mobile menu
+        // ========== MOBILE MENU FUNCTIONALITY ==========
         document.addEventListener('DOMContentLoaded', () => {
             const btn = document.getElementById('mobile-menu-btn');
             const menu = document.getElementById('mobile-menu');
 
+            // Toggle menu visibility
             btn.addEventListener('click', () => {
                 menu.classList.toggle('hidden');
             });
@@ -663,7 +592,7 @@
                 });
             });
 
-            // Navbar scroll effect
+            // ========== NAVBAR SCROLL EFFECT ==========
             const header = document.querySelector('header');
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 10) {
@@ -676,26 +605,27 @@
             });
         });
     </script>
+
+    <!-- Form Submission Script -->
     <script src="https://forminit.com/sdk/v1/forminit.js"></script>
+    <script>
+        const forminit = new Forminit();
+        const FORM_ID = "7x0l0pgv5g5";
 
-<script>
-  const forminit = new Forminit();
-  const FORM_ID = "7x0l0pgv5g5";
+        document.getElementById("contact-form").addEventListener("submit", async (e) => {
+            e.preventDefault();
 
-  document.getElementById("contact-form").addEventListener("submit", async (e) => {
-    e.preventDefault();
+            const formData = new FormData(e.target);
+            const { data, error } = await forminit.submit(FORM_ID, formData);
 
-    const formData = new FormData(e.target);
-    const { data, error } = await forminit.submit(FORM_ID, formData);
+            if (error) {
+                alert(error.message);
+                return;
+            }
 
-    if (error) {
-      alert(error.message);
-      return;
-    }
-
-    alert("Message sent successfully!");
-    e.target.reset();
-  });
-</script>
+            alert("Message sent successfully!");
+            e.target.reset();
+        });
+    </script>
 </body>
 </html>
