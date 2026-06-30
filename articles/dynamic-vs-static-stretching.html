@@ -98,6 +98,25 @@
             color: #475569;
         }
 
+        .article-body h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            color: #0f172a;
+            margin-bottom: 1rem;
+        }
+
+        .article-body h2 {
+            font-family: 'Lora', serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+            position: relative;
+        }
+
         .article-body h3 {
             margin-top: 2.5rem;
             margin-bottom: 1rem;
@@ -183,96 +202,207 @@
     </header>
 
     <main class="flex-grow">
-       
-                        <!-- Contact Info -->
-                        <div class="p-10 md:p-16 bg-slate-900 text-white flex flex-col justify-between">
-                            <div>
-                                <h2 class="text-3xl font-serif font-bold mb-4">Let's Connect</h2>
-                                <p class="text-slate-400 mb-10 text-lg">
-                                    Whether you want to discuss research, collaborate on a project, or inquire about
-                                    coaching consultations, feel free to reach out.
-                                </p>
 
-                                <div class="space-y-6">
-                                    <!-- Email Contact -->
-                                    <div class="flex items-center gap-4">
-                                        <div
-                                            class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-purple-light">
-                                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
-                                                </path>
-                                            </svg>
-                                        </div>
-                                        <div>
-                                            <p class="text-sm text-slate-400 font-medium">Email Address</p>
-                                            <a href="mailto:hooman_yavari@yahoo.com"
-                                                class="text-lg font-medium hover:text-purple-light transition-colors">hooman_yavari@yahoo.com</a>
-                                        </div>
-                                    </div>
+        <article class="max-w-5xl mx-auto px-6 py-16 article-body">
 
-                                    <!-- LinkedIn Contact -->
-                                    <div class="flex items-center gap-4">
-                                        <div
-                                            class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-blue-400">
-                                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                                <path
-                                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                                            </svg>
-                                        </div>
-                                        <div>
-                                            <p class="text-sm text-slate-400 font-medium">LinkedIn Profile</p>
-                                            <a href="https://www.linkedin.com/in/hooman-yavari-708028414"
-                                                target="_blank" rel="noopener noreferrer"
-                                                class="text-lg font-medium hover:text-blue-400 transition-colors">Connect
-                                                on LinkedIn</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+            <!-- Back Button -->
+            <div class="mb-10">
+                <a href="index.html" class="inline-flex items-center gap-3 px-5 py-3
+        bg-white border border-slate-200
+        rounded-xl shadow-sm
+        hover:shadow-md hover:border-purple
+        transition-all duration-300 group w-fit">
 
-                        <!-- Contact Form -->
-                        <div class="p-10 md:p-16 bg-white border-l border-slate-100">
-                            <form id="contact-form" enctype="multipart/form-data" class="space-y-6">
-                                <div>
-                                    <label for="name" class="block text-sm font-medium text-slate-700">Full Name</label>
-                                    <input type="text" name="fi-sender-fullName" id="name" required
-                                        class="mt-1 block w-full border-slate-300 rounded-md shadow-sm focus:ring-purple focus:border-purple sm:text-sm px-4 py-3 border bg-slate-50"
-                                        placeholder="John Doe">
-                                </div>
+                    <span class="text-slate-500 group-hover:text-purple transition-colors duration-300">
+                        ←
+                    </span>
 
-                                <div>
-                                    <label for="email" class="block text-sm font-medium text-slate-700">Email
-                                        Address</label>
-                                    <input type="email" name="fi-sender-email" id="email" required
-                                        class="mt-1 block w-full border-slate-300 rounded-md shadow-sm focus:ring-purple focus:border-purple sm:text-sm px-4 py-3 border bg-slate-50"
-                                        placeholder="john@example.com">
-                                </div>
+                    <span class="text-slate-700 font-medium group-hover:text-purple transition-colors duration-300">
+                        Back to Articles
+                    </span>
 
-                                <div>
-                                    <label for="message"
-                                        class="block text-sm font-medium text-slate-700">Message</label>
-                                    <textarea id="message" name="fi-text-message" rows="4" required
-                                        class="mt-1 block w-full border-slate-300 rounded-md shadow-sm focus:ring-purple focus:border-purple sm:text-sm px-4 py-3 border bg-slate-50"
-                                        placeholder="How can I help you?"></textarea>
-                                </div>
+                </a>
+            </div>
 
-                                <input type="hidden" name="redirect"
-                                    value="https://hooman-yavari.github.io/thank-you.html">
+            <!-- Title -->
+            <h1 class="text-4xl font-serif font-bold mb-4 text-slate-900">
+                Dynamic Stretching vs Static Stretching
+            </h1>
 
-                                <div>
-                                    <button type="submit"
-                                        class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-purple hover:bg-purple-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple transition-colors">
-                                        Send Message
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
+            <!-- Meta -->
+            <div class="flex gap-4 text-sm text-slate-500 mb-8">
+                <span>Sports Science</span>
+                <span>•</span>
+                <span>2026</span>
+            </div>
+
+            <!-- Image (FIXED) -->
+            <div class="relative w-full overflow-hidden rounded-xl mb-10 bg-slate-100">
+                <img src="../images/articles/dynamic-stretching.png" class="w-full h-auto block object-contain"
+                    alt="Dynamic vs Static Stretching" />
+            </div>
+
+            <!-- Article text -->
+            <div>
+                <h1>Dynamic Stretching vs. Static Stretching: Which Should Athletes Use?</h1>
+                <p>As an athlete, I have always been told to warm up properly before jumping into training or exercise,
+                    and stretching is often considered one of the most important parts of both warm-ups and cool-downs.
+                    However, I always wondered which type of stretching is actually better.
+                    Looking back, I’m not even sure my coaches agreed on the answer, since each seemed to have a
+                    different opinion.
+                    In this article, I will explain two main types of stretching and when athletes should use each one.
+                </p>
+                <h2>Static stretching :</h2>
+
+                <p>I’m going to begin by explaining traditional static stretching, which is commonly used and was once
+                    considered an injury-preventing pre-exercise movement, but is not strongly supported by modern
+                    science for warm-up purposes. However, it still has value in improving flexibility.
+                    Static stretching is holding a stretch in one position without moving for around 10-30 seconds. This
+                    helps temporarily increase muscle length and reduce muscle tightness, allowing the muscle to move
+                    more comfortably through its full range of motion.
+                    A few examples include: Upper back stretch, Shoulder stretch, Hamstring stretch, Calf stretch,
+                    quadriceps stretch, etc.
+                </p>
+                <img src="../images/articles/static-stretch.png" alt="Dynamic Stretching Example"
+                    class="w-full rounded-xl my-6 object-cover">
+                <h2>Dynamic stretching :</h2>
+                <p>As research on warm-up strategies has evolved, dynamic stretching has become increasingly recommended
+                    before exercise and athletic activities, mainly because it encourages your muscles and joints to
+                    move through their full range of motion.
+                    Dynamic stretching involves moving your muscles and joints through a full range of motion without
+                    holding a position. Instead of staying still in a stretch, you stay active by swinging one leg
+                    forward and back in a controlled motion for several reps.
+                    Some other examples are: hip circles, walking lunges, high knees, jumping jacks, etc.
+                </p>
+                <h2>Dynamic stretch or Static stretch?</h2>
+                <p>Returning to the original question, which type should athletes use? The answer depends on the sport,
+                    the context, and the timing of the activity.
+                    Dynamic stretches are better used during warm-ups because they prepare the body for movement by
+                    increasing blood flow and mobility, whereas static stretching can briefly reduce explosive strength.
+                    This is because dynamic movements activate the nervous system and mimic the actions used in sport,
+                    helping the body prepare more effectively for performance.
+                    In a study involving 24 healthy individuals, researchers found that dynamic stretching improved
+                    flexibility and reduced muscle stiffness. The benefits were observed immediately after stretching
+                    and lasted for up to 90 minutes. This suggests that dynamic stretches are a really good choice for
+                    warming up due to the long-lasting effect.
+                    Professional athletes like Soccer players, Basketball players, Footballers, Tennis players, Runners,
+                    and volleyball players can benefit the most from dynamic stretches because their sport involves
+                    speed, power, and fast changes of movement.
+                    It is still a good idea to use static stretches during warm-up for some sports like Gymnastics,
+                    Martial arts, Body building, Ballet / Dancing, but usually still combined with dynamic work for the
+                    best outcome.
+                </p>
+                <h2>When to use Static Stretching?</h2>
+                <p>Now I know I mentioned the uses of dynamic stretching so many times, but it doesn’t mean that you
+                    won't need static stretching anymore!
+                    Static stretching is best used when you finish your workout, and the cool-down phase begins.
+                    After training, the body is already warm, so static stretching is used to:
+                    help reduce muscle tightness
+                    gradually bring the heart rate down
+                    improve flexibility over time
+                    Relax the muscles after activity
+                </p>
+
+                <h3>Conclusion:</h3>
+                <p>Overall, both static and dynamic stretching have their place in training, but they are used for
+                    different purposes and at different times. Dynamic stretching is generally more suitable before
+                    exercise because it prepares the body for movement, improves mobility, and helps the muscles
+                    activate in a way that matches sporting actions. Static stretching, on the other hand, is more
+                    effective after exercise during the cool-down phase, where it helps reduce muscle tightness and
+                    support flexibility over time. Understanding when to use each type of stretching can help athletes
+                    improve performance and train more effectively while reducing unnecessary risk of poor preparation.
+                </p>
+            </div>
+
+        </article>
+
+    </main>
+
+    <!-- Contact Info -->
+    <div class="p-10 md:p-16 bg-slate-900 text-white flex flex-col justify-between">
+        <div>
+            <h2 class="text-3xl font-serif font-bold mb-4">Let's Connect</h2>
+            <p class="text-slate-400 mb-10 text-lg">
+                Whether you want to discuss research, collaborate on a project, or inquire about
+                coaching consultations, feel free to reach out.
+            </p>
+
+            <div class="space-y-6">
+                <!-- Email Contact -->
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-purple-light">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                            </path>
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="text-sm text-slate-400 font-medium">Email Address</p>
+                        <a href="mailto:hooman_yavari@yahoo.com"
+                            class="text-lg font-medium hover:text-purple-light transition-colors">hooman_yavari@yahoo.com</a>
+                    </div>
+                </div>
+
+                <!-- LinkedIn Contact -->
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-blue-400">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="text-sm text-slate-400 font-medium">LinkedIn Profile</p>
+                        <a href="https://www.linkedin.com/in/hooman-yavari-708028414" target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-lg font-medium hover:text-blue-400 transition-colors">Connect
+                            on LinkedIn</a>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="p-10 md:p-16 bg-white border-l border-slate-100">
+        <form id="contact-form" enctype="multipart/form-data" class="space-y-6">
+            <div>
+                <label for="name" class="block text-sm font-medium text-slate-700">Full Name</label>
+                <input type="text" name="fi-sender-fullName" id="name" required
+                    class="mt-1 block w-full border-slate-300 rounded-md shadow-sm focus:ring-purple focus:border-purple sm:text-sm px-4 py-3 border bg-slate-50"
+                    placeholder="John Doe">
+            </div>
+
+            <div>
+                <label for="email" class="block text-sm font-medium text-slate-700">Email
+                    Address</label>
+                <input type="email" name="fi-sender-email" id="email" required
+                    class="mt-1 block w-full border-slate-300 rounded-md shadow-sm focus:ring-purple focus:border-purple sm:text-sm px-4 py-3 border bg-slate-50"
+                    placeholder="john@example.com">
+            </div>
+
+            <div>
+                <label for="message" class="block text-sm font-medium text-slate-700">Message</label>
+                <textarea id="message" name="fi-text-message" rows="4" required
+                    class="mt-1 block w-full border-slate-300 rounded-md shadow-sm focus:ring-purple focus:border-purple sm:text-sm px-4 py-3 border bg-slate-50"
+                    placeholder="How can I help you?"></textarea>
+            </div>
+
+            <input type="hidden" name="redirect" value="https://hooman-yavari.github.io/thank-you.html">
+
+            <div>
+                <button type="submit"
+                    class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-purple hover:bg-purple-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple transition-colors">
+                    Send Message
+                </button>
+            </div>
+        </form>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
     </main>
 
     <footer class="bg-slate-50 border-t border-slate-200 py-12">
