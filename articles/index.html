@@ -133,6 +133,26 @@
                 translateY(40px) scale(.95);
 
         }
+
+        /* ========== scroll hide ========== */
+        #filter-slider {
+            overflow-x: auto;
+            overflow-y: hidden;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            touch-action: pan-x;
+            -webkit-overflow-scrolling: touch;
+            user-select: none;
+            overscroll-behavior: contain;
+        }
+
+        #filter-slider::-webkit-scrollbar {
+            display: none;
+        }
+
+        #filter-slider>button {
+            flex-shrink: 0;
+        }
     </style>
 </head>
 
@@ -226,37 +246,37 @@
 
         <!-- Category Buttons -->
         <section class="py-8 bg-slate-50 border-b border-slate-200">
-            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex flex-wrap gap-3">
-                    <button data-filter="all"
-                        class="px-4 py-2 rounded-full text-sm font-medium bg-purple text-white hover:bg-purple-dark transition-colors shadow-sm">
-                        All
-                    </button>
-                    <button data-filter="football"
-                        class="px-4 py-2 rounded-full text-sm font-medium bg-white text-slate-700 border border-slate-200 hover:border-purple hover:text-purple transition-colors">
-                        Football
-                    </button>
-                    <button data-filter="sports-science"
-                        class="px-4 py-2 rounded-full text-sm font-medium bg-white text-slate-700 border border-slate-200 hover:border-purple hover:text-purple transition-colors">
-                        Sports Science
-                    </button>
-                    <button data-filter="performance-analysis"
-                        class="px-4 py-2 rounded-full text-sm font-medium bg-white text-slate-700 border border-slate-200 hover:border-purple hover:text-purple transition-colors">
-                        Performance Analysis
-                    </button>
-                    <button data-filter="strength-conditioning"
-                        class="px-4 py-2 rounded-full text-sm font-medium bg-white text-slate-700 border border-slate-200 hover:border-purple hover:text-purple transition-colors">
-                        Strength & Conditioning
-                    </button>
-                    <button data-filter="injury-prevention"
-                        class="px-4 py-2 rounded-full text-sm font-medium bg-white text-slate-700 border border-slate-200 hover:border-purple hover:text-purple transition-colors">
-                        Injury Prevention
-                    </button>
-                    <button data-filter="coaching"
-                        class="px-4 py-2 rounded-full text-sm font-medium bg-white text-slate-700 border border-slate-200 hover:border-purple hover:text-purple transition-colors">
-                        Coaching
-                    </button>
-                </div>
+            <div id="filter-slider"
+                class="flex gap-3 overflow-x-auto whitespace-nowrap pb-2 px-4 cursor-grab select-none">
+
+                <button data-filter="all"
+                    class="px-4 py-2 rounded-full text-sm font-medium bg-purple text-white hover:bg-purple-dark transition-colors shadow-sm">
+                    All
+                </button>
+                <button data-filter="football"
+                    class="px-4 py-2 rounded-full text-sm font-medium bg-white text-slate-700 border border-slate-200 hover:border-purple hover:text-purple transition-colors">
+                    Football
+                </button>
+                <button data-filter="sports-science"
+                    class="px-4 py-2 rounded-full text-sm font-medium bg-white text-slate-700 border border-slate-200 hover:border-purple hover:text-purple transition-colors">
+                    Sports Science
+                </button>
+                <button data-filter="performance-analysis"
+                    class="px-4 py-2 rounded-full text-sm font-medium bg-white text-slate-700 border border-slate-200 hover:border-purple hover:text-purple transition-colors">
+                    Performance Analysis
+                </button>
+                <button data-filter="strength-conditioning"
+                    class="px-4 py-2 rounded-full text-sm font-medium bg-white text-slate-700 border border-slate-200 hover:border-purple hover:text-purple transition-colors">
+                    Strength & Conditioning
+                </button>
+                <button data-filter="injury-prevention"
+                    class="px-4 py-2 rounded-full text-sm font-medium bg-white text-slate-700 border border-slate-200 hover:border-purple hover:text-purple transition-colors">
+                    Injury Prevention
+                </button>
+                <button data-filter="coaching"
+                    class="px-4 py-2 rounded-full text-sm font-medium bg-white text-slate-700 border border-slate-200 hover:border-purple hover:text-purple transition-colors">
+                    Coaching
+                </button>
             </div>
         </section>
 
@@ -505,27 +525,34 @@
 
     <!-- Scripts -->
     <script>
-        // ========== MOBILE MENU FUNCTIONALITY ==========
         document.addEventListener('DOMContentLoaded', () => {
+
+            // =========================
+            // MOBILE MENU
+            // =========================
             const btn = document.getElementById('mobile-menu-btn');
             const menu = document.getElementById('mobile-menu');
 
-            // Toggle menu visibility
-            btn.addEventListener('click', () => {
-                menu.classList.toggle('hidden');
-            });
-
-            // Close mobile menu when a link is clicked
-            const links = menu.querySelectorAll('a');
-            links.forEach(link => {
-                link.addEventListener('click', () => {
-                    menu.classList.add('hidden');
+            if (btn && menu) {
+                btn.addEventListener('click', () => {
+                    menu.classList.toggle('hidden');
                 });
-            });
 
-            // ========== NAVBAR SCROLL EFFECT ==========
+                menu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        menu.classList.add('hidden');
+                    });
+                });
+            }
+
+            // =========================
+            // NAVBAR SHADOW
+            // =========================
             const header = document.querySelector('header');
+
             window.addEventListener('scroll', () => {
+                if (!header) return;
+
                 if (window.scrollY > 10) {
                     header.classList.add('shadow-md');
                     header.classList.remove('shadow-sm');
@@ -534,21 +561,59 @@
                     header.classList.remove('shadow-md');
                 }
             });
-
-            // Filter Cards
+            // =========================
+            // FILTER SLIDER
+            // =========================
             const filterButtons = document.querySelectorAll("[data-filter]");
             const articleCards = document.querySelectorAll("[data-category]");
+            const slider = document.getElementById("filter-slider");
 
+            let isDragging = false;
+            let startX = 0;
+            let scrollLeft = 0;
+
+            slider.addEventListener("mousedown", (e) => {
+                isDragging = true;
+                startX = e.pageX;
+                scrollLeft = slider.scrollLeft;
+                slider.classList.add("cursor-grabbing");
+            });
+
+            document.addEventListener("mouseup", () => {
+                isDragging = false;
+                slider.classList.remove("cursor-grabbing");
+            });
+
+            document.addEventListener("mousemove", (e) => {
+                if (!isDragging) return;
+
+                e.preventDefault();
+
+                const walk = e.pageX - startX;
+                slider.scrollLeft = scrollLeft - walk;
+            });
+
+            // Touch
+            slider.addEventListener("touchstart", (e) => {
+                startX = e.touches[0].pageX;
+                scrollLeft = slider.scrollLeft;
+            });
+
+            slider.addEventListener("touchmove", (e) => {
+                const walk = e.touches[0].pageX - startX;
+                slider.scrollLeft = scrollLeft - walk;
+            });
+
+            // =========================
+            // FILTER BUTTONS
+            // =========================
             filterButtons.forEach(button => {
 
                 button.addEventListener("click", () => {
 
                     filterButtons.forEach(btn => {
 
-                        btn.classList.remove(
-                            "bg-purple",
-                            "text-white"
-                        );
+                        btn.classList.remove("bg-purple", "text-white");
 
                         btn.classList.add(
                             "bg-white",
@@ -558,6 +623,9 @@
                         );
 
                     });
+
+                    button.classList.add("bg-purple", "text-white");
+
                     button.classList.remove(
                         "bg-white",
                         "text-slate-700",
@@ -565,58 +633,27 @@
                         "border-slate-200"
                     );
 
-                    button.classList.add(
-                        "bg-purple",
-                        "text-white"
-                    );
-
                     const filter = button.dataset.filter;
 
                     articleCards.forEach(card => {
 
-
-                        if (filter === "all") {
-
-                            card.classList.remove("hidden");
-
-                            setTimeout(() => {
-
-                                card.classList.remove("hide");
-
-                            }, 10);
-
-                        }
-
-                        else if (card.dataset.category === filter) {
+                        if (filter === "all" || card.dataset.category === filter) {
 
                             card.classList.remove("hidden");
 
-                            setTimeout(() => {
+                        } else {
 
-                                card.classList.remove("hide");
-
-                            }, 10);
-
-                        }
-
-                        else {
-
-                            card.classList.add("hide");
-
-                            setTimeout(() => {
-
-                                card.classList.add("hidden");
-
-                            }, 350);
+                            card.classList.add("hidden");
 
                         }
 
                     });
 
                 });
-            });
-        });
 
+            });
+
+        });
     </script>
 
     <!-- Form Submission Script -->
