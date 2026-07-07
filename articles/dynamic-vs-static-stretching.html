@@ -135,6 +135,21 @@
         .article-body li {
             margin-bottom: 0.5rem;
         }
+
+        /* ========== READING PROGRESS BAR ========== */
+
+        #reading-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            width: 0%;
+            background: linear-gradient(to right,
+                    #8b5cf6,
+                    #10b981);
+            z-index: 9999;
+            transition: width 0.15s ease;
+        }
     </style>
 </head>
 
@@ -199,6 +214,7 @@
                     class="block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:text-purple hover:bg-slate-50">Contact</a>
             </div>
         </div>
+        <div id="reading-progress"></div>
     </header>
 
     <main class="flex-grow">
@@ -474,6 +490,28 @@
                     header.classList.remove('shadow-md');
                 }
             });
+        });
+        // =========================
+        // READING PROGRESS BAR
+        // =========================
+
+        const progressBar = document.getElementById("reading-progress");
+
+        window.addEventListener("scroll", () => {
+
+            if (!progressBar) return;
+
+            const scrollTop = window.scrollY;
+
+            const docHeight =
+                document.documentElement.scrollHeight -
+                window.innerHeight;
+
+            const progress =
+                (scrollTop / docHeight) * 100;
+
+            progressBar.style.width = progress + "%";
+
         });
     </script>
 
